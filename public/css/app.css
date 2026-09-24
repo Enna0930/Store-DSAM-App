@@ -1,0 +1,110 @@
+/* Shared-hosting friendly custom CSS lives here. Tailwind is loaded by CDN in Blade. */
+
+/* Keep the shared public footer stable even on pages with different Tailwind token scopes. */
+.site-footer {
+    background-color: #061936 !important;
+    color: #ffffff !important;
+}
+
+.site-footer .text-surface-subtle,
+.site-footer .text-surface-bright,
+.site-footer .text-on-primary,
+.site-footer .text-white {
+    color: #f5f7fb !important;
+}
+
+.site-footer .text-tertiary-fixed,
+.site-footer .text-tertiary-fixed-dim {
+    color: #fad58b !important;
+}
+
+.site-footer .border-white\/10,
+.site-footer .border-white\/15 {
+    border-color: rgba(255, 255, 255, 0.14) !important;
+}
+
+@media (min-width: 1024px) {
+    .site-footer > div > .grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    }
+}
+
+footer .grid { text-align: left; }
+
+/* Keep the product catalog on a predictable vertical rhythm. */
+#productShowroomGrid {
+    align-items: stretch;
+}
+
+#productShowroomGrid .product-item {
+    min-width: 0;
+    height: 100%;
+}
+
+#productShowroomGrid .product-item > div:first-child {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    min-height: 0;
+}
+
+#productShowroomGrid .product-item > div:first-child > div.relative {
+    flex: 0 0 15rem;
+}
+
+#productShowroomGrid .product-item > div:first-child > div.relative img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#productShowroomGrid .product-item > div:first-child > div:last-child {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+}
+
+#productShowroomGrid .product-item h3 {
+    min-height: 3.5rem;
+}
+
+#productShowroomGrid .product-item h3 + p {
+    min-height: 5.5rem;
+}
+
+#productShowroomGrid .product-item .bg-surface-container-low {
+    min-height: 5.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#productShowroomGrid .product-item .flex.items-center.justify-between {
+    min-height: 2rem;
+    align-items: flex-start;
+}
+
+#productShowroomGrid .product-item .flex.items-center.justify-between > span:last-child {
+    max-width: 55%;
+    overflow-wrap: anywhere;
+    text-align: right;
+}
+
+#productShowroomGrid .product-item > div:last-child {
+    min-height: 4.5rem;
+    align-items: center;
+}
+
+#productShowroomGrid .product-item > div:last-child button {
+    min-height: 2.75rem;
+}
+
+/* Keep the contact page focused by removing repeated dispatch details. */
+body:has(#department-grid) main > div > section.relative.bg-surface-dark a[href^="mailto:"] {
+    display: none;
+}
+
+body:has(#department-grid) main > div > section.-mt-4 {
+    display: none;
+}
